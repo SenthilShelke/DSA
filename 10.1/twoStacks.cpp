@@ -1,6 +1,6 @@
 #include <iostream>
 
-//implementing two stacks in a single array
+//Implementing two stacks in a single array
 class TwoStacks {
 private:
     int* arr;

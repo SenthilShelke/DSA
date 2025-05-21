@@ -1,5 +1,6 @@
 #include <iostream>
 
+// Deque implementation using circular array
 class Deque {
 
 private:

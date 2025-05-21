@@ -1,5 +1,6 @@
 #include <iostream>
 
+//Queue implementation using circular array
 class Queue {
 private:
     int* arr;

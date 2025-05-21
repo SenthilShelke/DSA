@@ -2,9 +2,10 @@
 #include <bitset>
 using namespace std;
 
+//Mapping (i, j)-th index of a row major order matrix to a block matrix in a single array
 int normal_to_block(int i, int j, int n) {
     int block_i = i/2; // i >> 1
-    int block_j = j/2; // j >> 1
+    int block_j = j/2; 
     int block_index = block_i * (n/2) + block_j;
     int within_block_i = i % 2;
     int within_block_j = j % 2;

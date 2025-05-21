@@ -1,5 +1,6 @@
 #include <iostream>
 
+//Stack implementation using array
 class Stack {
 private:
     int* arr;
