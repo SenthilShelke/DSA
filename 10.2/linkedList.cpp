@@ -22,6 +22,8 @@ private:
 public:
     LinkedList() : head(nullptr), tail(nullptr), size(0) {}
 
+    LinkedList(Node* h, Node* t, int s) : head(h), tail(t), size(s) {}
+
     ~LinkedList() {
         Node* current = head;
         while (current != nullptr) {
@@ -85,6 +87,32 @@ public:
         }
         delete temp;
         size--;
+    }
+
+    static LinkedList Union(LinkedList& S1, LinkedList& S2) {
+        LinkedList S;
+        if(S1.head == nullptr && S2.head == nullptr) {
+            cout << "Both lists are empty" << endl;
+        } else if(S1.head == nullptr) {
+            S.head = S2.head;
+            S.tail = S2.tail;
+            S.size = S2.size;
+        } else if (S2.head == nullptr) {
+            S.head = S1.head;
+            S.tail = S1.tail;
+            S.size = S1.size;
+        } else {
+            S.head = S1.head;
+            S.tail = S2.tail;
+            S.size = S1.size + S2.size;
+            S1.tail->next = S2.head;
+            S2.head->prev = S1.tail;
+        }
+
+        S1.head = S2.head = nullptr;
+        S1.size = S2.size = 0;
+        return S;
+        
     }
     
 };
