@@ -114,5 +114,21 @@ public:
         return S;
         
     }
+
+    //reverse a SINGLY linked list
+    void reverse() {
+        Node* current = head;
+        Node* prev = nullptr;
+        while(current != nullptr) {
+            Node* temp = current->next;
+            current->next = prev;
+            prev = current;
+            current = temp;
+            delete temp;
+        }
+        delete current;
+        head = prev;
+        delete prev;
+    }
     
 };
