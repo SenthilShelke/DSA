@@ -22,7 +22,7 @@ public:
         if(current == nullptr) {
             return;
         }
-        cout << current->key;
+        cout << current->key << endl;
         printKeys(current->left);
         printKeys(current->right);
     }
